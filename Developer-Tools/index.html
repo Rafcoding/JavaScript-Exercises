@@ -19,27 +19,83 @@
 
     // Regular
 
+    console.log("Hello World");
+
     // Interpolated
+
+    console.log("Hello I am %s Ruiz!", "Rafa");
 
     // Styled
 
+    console.log("%c This is Magic!", "color: red; font-size: 20px; background-color: yellow; text-shadow: 5px 5px 0 blue;" );
+
     // warning!
+
+    console.warn("be careful");
 
     // Error :|
 
+    console.error("this is an error!");
+
     // Info
+
+    console.info("cocodriles eat 3-4 people per year");
+
+    // table
+
+    console.table(dogs);
 
     // Testing
 
+    const p = document.querySelector("p");
+    console.assert(p.classList === "this", "that is so fucking wrong mate!");
+    // if it is true dev tools dont show anything;
+
     // clearing
 
+    console.clear();
+
     // Viewing DOM Elements
+   console.log(p);
+   console.dir(p);
 
-    // Grouping together
+   console.clear();
 
-    // counting
+   // Grouping together
+   dogs.forEach(dog => {
+     console.groupCollapsed(`${dog.name}`);
+     console.log(`This is ${dog.name}`);
+     console.log(`${dog.name} is ${dog.age} years old`);
+     console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+     console.groupEnd(`${dog.name}`);
+   });
 
-    // timing
+   // counting
+
+   console.count('Wes');
+   console.count('Wes');
+   console.count('Steve');
+   console.count('Steve');
+   console.count('Wes');
+   console.count('Steve');
+   console.count('Wes');
+   console.count('Steve');
+   console.count('Steve');
+   console.count('Steve');
+   console.count('Steve');
+   console.count('Steve');
+
+   // timing
+   console.time('fetching data');
+   fetch('https://api.github.com/users/wesbos')
+     .then(data => data.json())
+     .then(data => {
+       console.timeEnd('fetching data');
+       console.log(data);
+     });
+
+
+
 
   </script>
 </body>
